@@ -82,14 +82,10 @@ class FPDF_TPL extends FPDF {
         if ($this->page <= 0)
             $this->error("You have to add a page to fpdf first!");
 
-        if ($x == null)
-            $x = 0;
-        if ($y == null)
-            $y = 0;
-        if ($w == null)
-            $w = $this->w;
-        if ($h == null)
-            $h = $this->h;
+        $x = $x ?? 0;
+        $y = $y ?? 0;
+        $w = $w ?? $this->w;
+        $h = $h ?? $this->h;
 
         // Save settings
         $this->tpl++;
